@@ -10,7 +10,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 $mustardtint: rgba(255, 178, 0, 0.9);
 $mustard: rgb(255, 178, 0);
 
-$intro: 6s;
+$intro: 1s;
 $popwidth: 40vw;
 
 body {
@@ -35,8 +35,23 @@ body {
 	}
 }
 header {
+	width: 100%;
+	background: url(../images/awesomejungle.jpg);
+	background: url(../images/bg2.jpg);
+	min-height: 300px;
+	background-size: cover;
+	background-position: 0 85%;
 	z-index: 0;
+
+	// .bottom {
+	// 	background: rgba(0,0,0,0.1);
+	// 	width: 100%;
+	// 	min-height: 300px;
+	// 	position: absolute;
+	// }
 	.logo {
+		position: relative;
+		z-index: 40;
 		padding: 20px;
 		background: $mustard;
 		display: inline-block;
@@ -110,16 +125,27 @@ header {
 
 section.splash {
 	.left-col {
-		width: 50%;
+		width: 70%;
 		float: left;
+		// margin-top: -120px;
+		background: #fff;
+		// box-shadow: 0px -12px 20px -2px rgba(0,0,0,0.75);
 
 		.intro {
-			margin-top: 10vh;
+			// padding: 40px;
+			padding-top: 60px;
+			opacity: 1;
+
+			b {
+			}
 			h1 {
-				font-size: 2.9em;
+				font-size: 2.4em;
+				// margin-top: -200px;
+				text-transform: uppercase;
+				font-size: 3em;
 			}
 			h2 {
-				font-size: 2em;
+				font-size: 2.1em;
 				// font-weight: 300;
 				line-height: 1.2em;
 
@@ -134,9 +160,10 @@ section.splash {
 		}
 
 		.work-intro {
+			// padding: 40px;
 			margin-bottom: 300px;
 			img {
-				width: 24%;
+				width: 24.5%;
 				display: inline-block;
 			}
 		}

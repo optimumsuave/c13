@@ -55,8 +55,16 @@ body {
     transform: rotate(14deg); }
 
 header {
+  width: 100%;
+  background: url(../images/awesomejungle.jpg);
+  background: url(../images/bg2.jpg);
+  min-height: 300px;
+  background-size: cover;
+  background-position: 0 85%;
   z-index: 0; }
   header .logo {
+    position: relative;
+    z-index: 40;
     padding: 20px;
     background: #ffb200;
     display: inline-block; }
@@ -86,9 +94,9 @@ header {
     -webkit-animation: popout-animation 0.3s ease-out;
     -moz-animation: popout-animation 0.3s ease-out;
     animation: popout-animation 0.3s ease-out;
-    -webkit-animation-delay: 4s;
-    -moz-animation-delay: 4s;
-    animation-delay: 4s;
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    animation-delay: 2s;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
@@ -168,14 +176,18 @@ header {
     transform: translate3d(40vw, 0, 0); } }
 
 section.splash .left-col {
-  width: 50%;
-  float: left; }
+  width: 70%;
+  float: left;
+  background: #fff; }
   section.splash .left-col .intro {
-    margin-top: 10vh; }
+    padding-top: 60px;
+    opacity: 1; }
     section.splash .left-col .intro h1 {
-      font-size: 2.9em; }
+      font-size: 2.4em;
+      text-transform: uppercase;
+      font-size: 3em; }
     section.splash .left-col .intro h2 {
-      font-size: 2em;
+      font-size: 2.1em;
       line-height: 1.2em;
       font-weight: 300;
       color: #999;
@@ -184,7 +196,7 @@ section.splash .left-col {
   section.splash .left-col .work-intro {
     margin-bottom: 300px; }
     section.splash .left-col .work-intro img {
-      width: 24%;
+      width: 24.5%;
       display: inline-block; }
 
 .overlay {
@@ -193,9 +205,9 @@ section.splash .left-col {
   z-index: 50;
   position: fixed;
   background: #ffb200;
-  -webkit-animation: overlay-animation 3s ease-out;
-  -moz-animation: overlay-animation 3s ease-out;
-  animation: overlay-animation 3s ease-out;
+  -webkit-animation: overlay-animation 1s ease-out;
+  -moz-animation: overlay-animation 1s ease-out;
+  animation: overlay-animation 1s ease-out;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -220,10 +232,10 @@ section.splash .left-col {
 
 .overlay-crane-x {
   z-index: 100;
-  position: absolute;
-  -webkit-animation: crane 3s ease-out;
-  -moz-animation: crane 3s ease-out;
-  animation: crane 3s ease-out;
+  position: fixed;
+  -webkit-animation: crane 1s ease-out;
+  -moz-animation: crane 1s ease-out;
+  animation: crane 1s ease-out;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -249,9 +261,9 @@ section.splash .left-col {
     -ms-transform-origin: center;
     -o-transform-origin: center;
     transform-origin: center;
-    -webkit-animation: flywheel 3s ease-out;
-    -moz-animation: flywheel 3s ease-out;
-    animation: flywheel 3s ease-out;
+    -webkit-animation: flywheel 1s ease-out;
+    -moz-animation: flywheel 1s ease-out;
+    animation: flywheel 1s ease-out;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
