@@ -179,7 +179,7 @@ section.splash {
 
 .overlay-crane-x {
 	z-index: 100;
-	position: absolute;
+	position: fixed;
 	@include animation(crane $intro ease-out);
 	@include animation-fill-mode(forwards);
 	@include animation-delay(1s);
