@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:100,200,300,300italic,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,200,300,300italic,400,600);
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
@@ -29,6 +29,7 @@ table {
 
 body {
   background: #FFFFFF;
+  background: #222222;
   font-family: 'Roboto';
   -webkit-font-smoothing: antialiased; }
 
@@ -56,11 +57,9 @@ body {
 
 header {
   width: 100%;
-  background: url(../images/awesomejungle.jpg);
-  background: url(../images/bg2.jpg);
-  min-height: 300px;
+  min-height: 200px;
   background-size: cover;
-  background-position: 0 85%;
+  background-position: 0 40%;
   z-index: 0; }
   header .logo {
     position: relative;
@@ -75,6 +74,13 @@ header {
       font-size: 1.4em;
       letter-spacing: 0.1em;
       color: white; }
+  header h1 {
+    margin-top: 15vh;
+    font-size: 3.4em;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.05em; }
 
 .popout-outer {
   position: fixed;
@@ -94,9 +100,9 @@ header {
     -webkit-animation: popout-animation 0.3s ease-out;
     -moz-animation: popout-animation 0.3s ease-out;
     animation: popout-animation 0.3s ease-out;
-    -webkit-animation-delay: 2s;
-    -moz-animation-delay: 2s;
-    animation-delay: 2s;
+    -webkit-animation-delay: 8s;
+    -moz-animation-delay: 8s;
+    animation-delay: 8s;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
@@ -177,8 +183,7 @@ header {
 
 section.splash .left-col {
   width: 70%;
-  float: left;
-  background: #fff; }
+  float: left; }
   section.splash .left-col .intro {
     padding-top: 60px;
     opacity: 1; }
@@ -187,12 +192,12 @@ section.splash .left-col {
       text-transform: uppercase;
       font-size: 3em; }
     section.splash .left-col .intro h2 {
-      font-size: 2.1em;
+      font-size: 1.8em;
       line-height: 1.2em;
       font-weight: 300;
       color: #999;
       padding-bottom: 20px;
-      border-bottom: #ffb200 6px solid; }
+      border-bottom: #ffb200 1px solid; }
   section.splash .left-col .work-intro {
     margin-bottom: 300px; }
     section.splash .left-col .work-intro img {
@@ -205,9 +210,9 @@ section.splash .left-col {
   z-index: 50;
   position: fixed;
   background: #ffb200;
-  -webkit-animation: overlay-animation 1s ease-out;
-  -moz-animation: overlay-animation 1s ease-out;
-  animation: overlay-animation 1s ease-out;
+  -webkit-animation: overlay-animation 7s ease-out;
+  -moz-animation: overlay-animation 7s ease-out;
+  animation: overlay-animation 7s ease-out;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -233,9 +238,9 @@ section.splash .left-col {
 .overlay-crane-x {
   z-index: 100;
   position: fixed;
-  -webkit-animation: crane 1s ease-out;
-  -moz-animation: crane 1s ease-out;
-  animation: crane 1s ease-out;
+  -webkit-animation: crane 7s ease-out;
+  -moz-animation: crane 7s ease-out;
+  animation: crane 7s ease-out;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -261,9 +266,9 @@ section.splash .left-col {
     -ms-transform-origin: center;
     -o-transform-origin: center;
     transform-origin: center;
-    -webkit-animation: flywheel 1s ease-out;
-    -moz-animation: flywheel 1s ease-out;
-    animation: flywheel 1s ease-out;
+    -webkit-animation: flywheel 7s ease-out;
+    -moz-animation: flywheel 7s ease-out;
+    animation: flywheel 7s ease-out;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;

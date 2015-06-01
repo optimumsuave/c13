@@ -4,17 +4,18 @@
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
 
 
-@import url(http://fonts.googleapis.com/css?family=Roboto:100,200,300,300italic,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,200,300,300italic,400,600);
 
 
 $mustardtint: rgba(255, 178, 0, 0.9);
 $mustard: rgb(255, 178, 0);
 
-$intro: 1s;
+$intro: 7s;
 $popwidth: 40vw;
 
 body {
 	background: #FFFFFF;
+	background: #222222;
 	font-family: 'Roboto';
 	-webkit-font-smoothing: antialiased;
 }
@@ -36,11 +37,11 @@ body {
 }
 header {
 	width: 100%;
-	background: url(../images/awesomejungle.jpg);
-	background: url(../images/bg2.jpg);
-	min-height: 300px;
+	// background: url(../images/awesomejungle.jpg);
+	// background: url(../images/bg2.jpg);
+	min-height: 200px;
 	background-size: cover;
-	background-position: 0 85%;
+	background-position: 0 40%;
 	z-index: 0;
 
 	// .bottom {
@@ -64,9 +65,18 @@ header {
 			font-size: 1.4em;
 			letter-spacing: 0.1em;
 			color: white;
-
 		}
 	}
+
+	h1 {
+		margin-top: 15vh;
+		font-size: 3.4em;
+		text-transform: uppercase;
+		color: white;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+	}
+
 
 }
 .popout-outer{
@@ -128,7 +138,6 @@ section.splash {
 		width: 70%;
 		float: left;
 		// margin-top: -120px;
-		background: #fff;
 		// box-shadow: 0px -12px 20px -2px rgba(0,0,0,0.75);
 
 		.intro {
@@ -145,7 +154,7 @@ section.splash {
 				font-size: 3em;
 			}
 			h2 {
-				font-size: 2.1em;
+				font-size: 1.8em;
 				// font-weight: 300;
 				line-height: 1.2em;
 
@@ -153,7 +162,8 @@ section.splash {
 				// font-size: 2em;
 				color:#999;
 				padding-bottom: 20px;
-				border-bottom: $mustard 6px solid;
+				border-bottom: $mustard 1px solid;
+
 			}
 
 
