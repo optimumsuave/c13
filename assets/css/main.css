@@ -57,11 +57,57 @@ body {
 
 header {
   width: 100%;
-  min-height: 200px;
-  background-size: cover;
-  background-position: 0 40%;
+  min-height: 500px;
   z-index: 0; }
+  header .bg-overlay-tint {
+    background: #222222;
+    width: 100%;
+    min-height: 500px;
+    position: absolute;
+    z-index: 2;
+    -webkit-animation: overlay-tint-animation 0.5s ease-out;
+    -moz-animation: overlay-tint-animation 0.5s ease-out;
+    animation: overlay-tint-animation 0.5s ease-out;
+    -webkit-animation-delay: 5s;
+    -moz-animation-delay: 5s;
+    animation-delay: 5s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+  header .bg-overlay {
+    background: url(../images/awesomejungle.jpg);
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-animation: overlay-gray-animation 3s cubic-bezier(0.57, 0.02, 0, 0.96);
+    -moz-animation: overlay-gray-animation 3s cubic-bezier(0.57, 0.02, 0, 0.96);
+    animation: overlay-gray-animation 3s cubic-bezier(0.57, 0.02, 0, 0.96);
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    animation-delay: 6s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    background-size: cover;
+    background-position: 0 80%;
+    width: 100%;
+    min-height: 500px;
+    position: absolute;
+    z-index: 0; }
   header .logo {
+    -webkit-animation: logo-animation 0.6s cubic-bezier(0.57, 0.02, 0, 0.96);
+    -moz-animation: logo-animation 0.6s cubic-bezier(0.57, 0.02, 0, 0.96);
+    animation: logo-animation 0.6s cubic-bezier(0.57, 0.02, 0, 0.96);
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    animation-delay: 6s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    -o-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
     position: relative;
     z-index: 40;
     padding: 20px;
@@ -75,6 +121,8 @@ header {
       letter-spacing: 0.1em;
       color: white; }
   header h1 {
+    position: relative;
+    z-index: 5;
     margin-top: 15vh;
     font-size: 3.4em;
     text-transform: uppercase;
@@ -100,9 +148,9 @@ header {
     -webkit-animation: popout-animation 0.3s ease-out;
     -moz-animation: popout-animation 0.3s ease-out;
     animation: popout-animation 0.3s ease-out;
-    -webkit-animation-delay: 8s;
-    -moz-animation-delay: 8s;
-    animation-delay: 8s;
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    animation-delay: 6s;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
@@ -117,11 +165,74 @@ header {
     background-size: contain;
     background-position-x: 0vw; }
 
-@-webkit-keyframes popout-scroll { }
+@-webkit-keyframes logo-animation {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0); }
 
-@-moz-keyframes popout-scroll { }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0); } }
 
-@keyframes popout-scroll { }
+@-moz-keyframes logo-animation {
+  0% {
+    -moz-transform: translate3d(0, -100%, 0); }
+
+  100% {
+    -moz-transform: translate3d(0, 0, 0); } }
+
+@keyframes logo-animation {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    -o-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); }
+
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+
+@-webkit-keyframes overlay-tint-animation {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0.4; } }
+
+@-moz-keyframes overlay-tint-animation {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0.4; } }
+
+@keyframes overlay-tint-animation {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0.4; } }
+
+@-webkit-keyframes overlay-gray-animation {
+  0% {
+    -webkit-filter: grayscale(100%); }
+
+  100% {
+    -webkit-filter: grayscale(0%); } }
+
+@-moz-keyframes overlay-gray-animation {
+ }
+
+@keyframes overlay-gray-animation {
+  0% {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+
+  100% {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%); } }
 
 @-webkit-keyframes popout-animation {
   0% {
@@ -198,6 +309,10 @@ section.splash .left-col {
       color: #999;
       padding-bottom: 20px;
       border-bottom: #ffb200 1px solid; }
+  section.splash .left-col h3 {
+    color: white;
+    line-height: 1.2em;
+    font-weight: 300; }
   section.splash .left-col .work-intro {
     margin-bottom: 300px; }
     section.splash .left-col .work-intro img {
@@ -210,9 +325,9 @@ section.splash .left-col {
   z-index: 50;
   position: fixed;
   background: #ffb200;
-  -webkit-animation: overlay-animation 7s ease-out;
-  -moz-animation: overlay-animation 7s ease-out;
-  animation: overlay-animation 7s ease-out;
+  -webkit-animation: overlay-animation 5s cubic-bezier(0.57, 0.02, 0, 0.96);
+  -moz-animation: overlay-animation 5s cubic-bezier(0.57, 0.02, 0, 0.96);
+  animation: overlay-animation 5s cubic-bezier(0.57, 0.02, 0, 0.96);
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -238,9 +353,9 @@ section.splash .left-col {
 .overlay-crane-x {
   z-index: 100;
   position: fixed;
-  -webkit-animation: crane 7s ease-out;
-  -moz-animation: crane 7s ease-out;
-  animation: crane 7s ease-out;
+  -webkit-animation: crane 5s cubic-bezier(0.57, 0.02, 0, 0.96);
+  -moz-animation: crane 5s cubic-bezier(0.57, 0.02, 0, 0.96);
+  animation: crane 5s cubic-bezier(0.57, 0.02, 0, 0.96);
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
@@ -266,9 +381,9 @@ section.splash .left-col {
     -ms-transform-origin: center;
     -o-transform-origin: center;
     transform-origin: center;
-    -webkit-animation: flywheel 7s ease-out;
-    -moz-animation: flywheel 7s ease-out;
-    animation: flywheel 7s ease-out;
+    -webkit-animation: flywheel 5s cubic-bezier(0.57, 0.02, 0, 0.96);
+    -moz-animation: flywheel 5s cubic-bezier(0.57, 0.02, 0, 0.96);
+    animation: flywheel 5s cubic-bezier(0.57, 0.02, 0, 0.96);
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;

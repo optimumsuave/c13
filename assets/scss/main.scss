@@ -10,12 +10,14 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 $mustardtint: rgba(255, 178, 0, 0.9);
 $mustard: rgb(255, 178, 0);
 
-$intro: 7s;
+$bg: #222222;
+
+$intro: 5s;
 $popwidth: 40vw;
 
 body {
 	background: #FFFFFF;
-	background: #222222;
+	background: $bg;
 	font-family: 'Roboto';
 	-webkit-font-smoothing: antialiased;
 }
@@ -37,12 +39,37 @@ body {
 }
 header {
 	width: 100%;
-	// background: url(../images/awesomejungle.jpg);
+	
 	// background: url(../images/bg2.jpg);
-	min-height: 200px;
-	background-size: cover;
-	background-position: 0 40%;
+	min-height: 500px;
 	z-index: 0;
+
+	.bg-overlay-tint {
+		background: $bg;
+		width: 100%;
+		min-height: 500px;
+		position: absolute;
+		z-index: 2;
+		@include animation(overlay-tint-animation 0.5s ease-out);
+		@include animation-delay($intro);
+		@include animation-fill-mode(forwards);
+	}
+
+
+	.bg-overlay {
+		background: url(../images/awesomejungle.jpg);
+		// background: url(../images/bg3.jpg);
+		@include filter(grayscale(100%));
+		@include animation(overlay-gray-animation 3s cubic-bezier(0.57, 0.02, 0, 0.96));
+		@include animation-delay($intro+1);
+		@include animation-fill-mode(forwards);
+		background-size: cover;
+		background-position: 0 80%;
+		width: 100%;
+		min-height: 500px;
+		position: absolute;
+		z-index: 0;
+	}
 
 	// .bottom {
 	// 	background: rgba(0,0,0,0.1);
@@ -51,6 +78,11 @@ header {
 	// 	position: absolute;
 	// }
 	.logo {
+		@include animation(logo-animation 0.6s cubic-bezier(0.57, 0.02, 0, 0.96));
+		@include animation-delay($intro+1);
+		@include animation-fill-mode(forwards);
+		@include transform(translate3d(0, -100%, 0));
+
 		position: relative;
 		z-index: 40;
 		padding: 20px;
@@ -69,6 +101,8 @@ header {
 	}
 
 	h1 {
+		position: relative;
+		z-index: 5;
 		margin-top: 15vh;
 		font-size: 3.4em;
 		text-transform: uppercase;
@@ -76,7 +110,6 @@ header {
 		font-weight: 600;
 		letter-spacing: 0.05em;
 	}
-
 
 }
 .popout-outer{
@@ -109,7 +142,31 @@ header {
 	}
 }
 
-@include keyframes(popout-scroll) {
+@include keyframes(logo-animation) {
+	0% {
+		@include transform(translate3d(0,-100%,0));
+	}
+	100% {
+		@include transform(translate3d(0,0,0));
+	}
+}
+
+@include keyframes(overlay-tint-animation) {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.4;
+	}
+}
+@include keyframes(overlay-gray-animation) {
+	0% {
+		@include filter(grayscale(100%));
+	}
+	100% {
+		@include filter(grayscale(0%));
+
+	}
 
 }
 
@@ -166,7 +223,15 @@ section.splash {
 
 			}
 
+			
 
+
+		}
+
+		h3 {
+			color: white;
+			line-height: 1.2em;
+			font-weight: 300;
 		}
 
 		.work-intro {
@@ -194,7 +259,7 @@ section.splash {
 	position: fixed;
 	background: $mustard;
 
-	@include animation(overlay-animation $intro ease-out);
+	@include animation(overlay-animation $intro cubic-bezier(0.57, 0.02, 0, 0.96));
 	@include animation-fill-mode(forwards);
 	@include animation-delay(1s);
   	@include transform(translate3d(0,0,0));
@@ -217,7 +282,7 @@ section.splash {
 .overlay-crane-x {
 	z-index: 100;
 	position: fixed;
-	@include animation(crane $intro ease-out);
+	@include animation(crane $intro cubic-bezier(0.57, 0.02, 0, 0.96));
 	@include animation-fill-mode(forwards);
 	@include animation-delay(1s);
 	@include transform(translate3d(60vw, -120vh, 0));
@@ -237,7 +302,7 @@ section.splash {
 
 	.overlay-fly-wheel {
 		@include transform-origin(center);
-		@include animation(flywheel $intro ease-out);
+		@include animation(flywheel $intro cubic-bezier(0.57, 0.02, 0, 0.96));
 		@include animation-fill-mode(forwards);
 		@include animation-delay(1s);
 	}
