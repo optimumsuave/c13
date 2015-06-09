@@ -22,9 +22,13 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
+.clearfix {
+	clear: both;
+}
+
 .shell {
-	width: 90%;
-	padding: 0 5%;
+	// width: 100%;
+	padding: 0 40px;
 	max-width: 1020px;
 	margin: 0 auto;
 }
@@ -41,32 +45,35 @@ header {
 	width: 100%;
 	
 	// background: url(../images/bg2.jpg);
-	min-height: 500px;
+	min-height: 100vh;
 	z-index: 0;
 
 	.bg-overlay-tint {
+		display: none;
+		
 		background: $bg;
 		width: 100%;
-		min-height: 500px;
+		min-height: 100vh;
 		position: absolute;
 		z-index: 2;
-		@include animation(overlay-tint-animation 0.5s ease-out);
+		// @include animation(overlay-tint-animation 0.5s ease-out);
 		@include animation-delay($intro);
 		@include animation-fill-mode(forwards);
 	}
 
 
 	.bg-overlay {
+		display: none;
 		background: url(../images/awesomejungle.jpg);
 		// background: url(../images/bg3.jpg);
 		@include filter(grayscale(100%));
-		@include animation(overlay-gray-animation 3s cubic-bezier(0.57, 0.02, 0, 0.96));
-		@include animation-delay($intro+1);
+		// @include animation(overlay-gray-animation 1s cubic-bezier(0.57, 0.02, 0, 0.96));
+		@include animation-delay($intro+2);
 		@include animation-fill-mode(forwards);
 		background-size: cover;
 		background-position: 0 80%;
 		width: 100%;
-		min-height: 500px;
+		min-height: 100vh;
 		position: absolute;
 		z-index: 0;
 	}
@@ -103,12 +110,23 @@ header {
 	h1 {
 		position: relative;
 		z-index: 5;
-		margin-top: 15vh;
+		margin-top: 5vh;
 		font-size: 3.4em;
 		text-transform: uppercase;
 		color: white;
 		font-weight: 600;
 		letter-spacing: 0.05em;
+	}
+
+
+	p {
+		border-top: $mustard solid 2px;
+		margin-top: 20px;
+		padding-top: 20px;	
+		position: relative;
+		z-index: 5;
+		color: white;
+		font-size: 2em;
 	}
 
 }
@@ -156,7 +174,7 @@ header {
 		opacity: 1;
 	}
 	100% {
-		opacity: 0.4;
+		opacity: 0.6;
 	}
 }
 @include keyframes(overlay-gray-animation) {
@@ -191,57 +209,113 @@ header {
 
 
 section.splash {
-	.left-col {
-		width: 70%;
+	min-height: 400px;
+
+
+	
+
+	
+	.bottom, .top {
 		float: left;
-		// margin-top: -120px;
-		// box-shadow: 0px -12px 20px -2px rgba(0,0,0,0.75);
+		clear: both;
+	}
 
-		.intro {
-			// padding: 40px;
-			padding-top: 60px;
-			opacity: 1;
+	.top .intro h2 {
+		padding-bottom: 0;
+	}
+	.bottom .intro h2 {
+		padding-top: 0;
+	}
+	.middle {
+		display: inline-block;
+		width: 100%;
+		background: white;
+		text-align: left;
 
-			b {
-			}
-			h1 {
-				font-size: 2.4em;
-				// margin-top: -200px;
-				text-transform: uppercase;
-				font-size: 3em;
-			}
-			h2 {
-				font-size: 1.8em;
-				// font-weight: 300;
-				line-height: 1.2em;
-
-				font-weight: 300;
-				// font-size: 2em;
-				color:#999;
-				padding-bottom: 20px;
-				border-bottom: $mustard 1px solid;
-
-			}
-
-			
-
-
+		h1 {
+			font-size: 3em;
+			color:$mustard;
+			padding: 20px;
+			padding-left: 0;
 		}
+	}
 
-		h3 {
+	.intro {
+		width: 60%;
+		// padding: 40px;
+		padding-top: 40px;
+		opacity: 1;
+		text-align: left;
+		b {
+		}
+		h1 {
+			// margin-top: -200px;
+			text-transform: uppercase;
+			font-size: 2em;
+		}
+		h2 {
 			color: white;
+			font-size: 1.6em;
+			// font-weight: 300;
 			line-height: 1.2em;
+			// font-weight: 300;
+			// font-size: 2em;
+			// color: #666;
+			// padding: 20px;
+		}
+		p {
+			font-size: 2.2em;
+			color: #888;
 			font-weight: 300;
 		}
+	}	
 
-		.work-intro {
-			// padding: 40px;
-			margin-bottom: 300px;
-			img {
-				width: 24.5%;
-				display: inline-block;
-			}
+	h3 {
+		color: white;
+		line-height: 1.2em;
+		font-weight: 300;
+	}
+
+	.work-intro {
+		// padding: 40px;
+		margin-bottom: 300px;
+		img {
+			width: 24.5%;
+			display: inline-block;
 		}
+	}
+
+	.eq {
+		float: right;
+		position: relative;
+		z-index: 100;
+		overflow: hidden;
+		height: 64px;
+		margin-top: -128px;//
+		// min-height: 60px;
+		// max-height: 60px;
+		.eq-block {
+			width: 1px;
+			height: 16px;
+			background: $mustard;
+			margin-right: 4px;
+			// float: left;
+			display: inline-block;
+			min-height: 1px;
+		}
+	}
+}
+
+
+section.work {
+	min-height: 200px;
+	// background: $mustard;
+	padding: 60px 0;
+
+	h1 {
+		font-size: 2em;
+		font-weight: 800;
+		letter-spacing: 
 	}
 }
 
@@ -351,5 +425,212 @@ section.splash {
 	}
 	100% {
   		@include transform(rotate(0));
+	}
+}
+
+
+@include keyframes(piston-flywheel) {
+	0%{
+  		@include transform(rotate(0deg));
+	}
+	100% {
+  		@include transform(rotate(359deg));
+	}
+}
+
+
+@include keyframes(piston-ball) {
+	0%{
+  		@include transform(rotate(90deg));
+	}
+	100% {
+  		@include transform(rotate(450deg));
+	}
+}
+
+@include keyframes(piston-crankshaft) {
+	0%{
+		@include transform(translate3d(20px,10px,0) rotate(0deg));		
+	}
+	25%{
+		@include transform(translate3d(0px,10px,0) rotate(-9deg));
+	}
+	50% {
+		@include transform(translate3d(-20px,10px,0) rotate(0deg));
+	}
+	75% {
+		@include transform(translate3d(0px,10px,0) rotate(9deg));
+	}
+	100% {
+		@include transform(translate3d(20px,10px,0) rotate(0deg));
+	}
+}
+
+@include keyframes(piston-valve) {
+	0%{
+		@include transform(translate3d(15px,0,0));		
+	}
+	// 25%{
+	// 	@include transform(translate3d(0px,0,0));
+	// }
+	50% {
+		@include transform(translate3d(-15px,0,0));
+	}
+	// 75% {
+	// 	@include transform(translate3d(0px,0,0));
+	// }
+	100% {
+		@include transform(translate3d(15px,0,0));
+	}
+}
+
+@include keyframes(piston-needle) {
+	0%{
+  		@include transform(rotate(-45deg));
+	}
+	90%{
+  		@include transform(rotate(45deg));
+	}
+	100%{
+  		@include transform(rotate(-45deg));
+	}
+}
+
+
+$pistonspeed: 1s;
+$pistondelay: $intro;
+$pistontiming: linear;
+// $pistontiming: linear;
+
+
+.piston {
+	margin-top: 40px;
+	position: relative;
+	// background: rgba(0,0,0,0.5);
+	// padding: 20px;
+	float: left;
+	width: 40%;
+	z-index: 30;
+
+	svg {
+		width: 100%;
+	}
+
+	.piston-tube {
+		background: #444;
+		// float: left;
+		clear: both;
+		width: 100%;
+		height: 70px;
+		border-right: #000 solid 30px;
+		input {
+			font-family: 'Roboto';
+			background: none;
+			border: 0;
+			width: 100%;
+			text-align: center;
+			color: white;
+			outline: 0;
+			vertical-align: middle;
+			line-height: 65px;
+			font-size: 2em;
+		}
+
+		p {
+			color: white;
+			margin:0;
+			margin-top: 10px;
+			padding:0;
+			border: 0;
+			float: left;
+			font-size: 0.9em;
+		}
+	}
+
+	.piston-flywheel{
+		@include transform-origin(center);
+		@include animation(piston-flywheel $pistonspeed infinite); //cubic-bezier(0.57, 0.02, 0, 0.96)
+		@include animation-fill-mode(forwards);
+		@include animation-timing-function($pistontiming);
+		@include animation-delay($pistondelay);
+	}
+	.piston-ball {
+  		@include transform(rotate(90deg));  		
+		@include transform-origin(center 50px);
+		@include animation(piston-ball $pistonspeed infinite); //cubic-bezier(0.57, 0.02, 0, 0.96)
+		@include animation-fill-mode(forwards);
+		@include animation-timing-function($pistontiming);
+		@include animation-delay($pistondelay);
+	}
+	.piston-crankshaft{
+		@include transform(translate3d(20px,10px,0) rotate(0deg));
+		@include transform-origin(right);
+		@include animation(piston-crankshaft $pistonspeed infinite); //cubic-bezier(0.57, 0.02, 0, 0.96)
+		@include animation-fill-mode(forwards);
+		@include animation-timing-function($pistontiming);
+		@include animation-delay($pistondelay);
+
+	}
+
+	.piston-valve{
+		@include transform(translate3d(15px,0,0));
+		@include transform-origin(right);
+		@include animation(piston-valve $pistonspeed infinite); //cubic-bezier(0.57, 0.02, 0, 0.96)
+		@include animation-fill-mode(forwards);
+		@include animation-timing-function($pistontiming);
+		@include animation-timing-function(ease-in-out);
+		@include animation-delay($pistondelay);
+	}
+
+	.piston-needle{
+		// @include animation(piston-needle $pistonspeed*8 infinite); //cubic-bezier(0.57, 0.02, 0, 0.96)
+		// @include animation-fill-mode(forwards);
+		// @include animation-timing-function(linear);
+		@include transform-origin(bottom);
+		// @include animation-delay($pistondelay);
+		@include transform(rotate(-45deg));
+	}
+
+
+	&.slow {
+		.piston-flywheel,
+		.piston-valve,
+		.piston-ball,
+		.piston-crankshaft {
+			@include animation-duration($pistonspeed * 2);
+		}
+	}
+	&.fast {
+		.piston-flywheel,
+		.piston-valve,
+		.piston-ball,
+		.piston-crankshaft {
+			@include animation-duration($pistonspeed / 2);
+		}
+	}
+
+}
+
+.piston-right {
+	width: 60%;
+	float:right;
+	margin-top: 32vh;
+	.letter {
+		position: absolute;
+		right: 100%;
+		color: white;
+		font-size: 1.4em;
+		&.flying {
+
+		}
+	}
+	.box {
+		background: 0;
+		border: #eee solid 1px;
+		width: 120px;
+		height: 120px;
+		margin:0 auto;
+		position: relative;
+		z-index: 30;
 	}
 }

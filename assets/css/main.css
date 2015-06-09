@@ -33,9 +33,11 @@ body {
   font-family: 'Roboto';
   -webkit-font-smoothing: antialiased; }
 
+.clearfix {
+  clear: both; }
+
 .shell {
-  width: 90%;
-  padding: 0 5%;
+  padding: 0 40px;
   max-width: 1020px;
   margin: 0 auto; }
 
@@ -57,17 +59,15 @@ body {
 
 header {
   width: 100%;
-  min-height: 500px;
+  min-height: 100vh;
   z-index: 0; }
   header .bg-overlay-tint {
+    display: none;
     background: #222222;
     width: 100%;
-    min-height: 500px;
+    min-height: 100vh;
     position: absolute;
     z-index: 2;
-    -webkit-animation: overlay-tint-animation 0.5s ease-out;
-    -moz-animation: overlay-tint-animation 0.5s ease-out;
-    animation: overlay-tint-animation 0.5s ease-out;
     -webkit-animation-delay: 5s;
     -moz-animation-delay: 5s;
     animation-delay: 5s;
@@ -75,22 +75,20 @@ header {
     -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards; }
   header .bg-overlay {
+    display: none;
     background: url(../images/awesomejungle.jpg);
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
-    -webkit-animation: overlay-gray-animation 3s cubic-bezier(0.57, 0.02, 0, 0.96);
-    -moz-animation: overlay-gray-animation 3s cubic-bezier(0.57, 0.02, 0, 0.96);
-    animation: overlay-gray-animation 3s cubic-bezier(0.57, 0.02, 0, 0.96);
-    -webkit-animation-delay: 6s;
-    -moz-animation-delay: 6s;
-    animation-delay: 6s;
+    -webkit-animation-delay: 7s;
+    -moz-animation-delay: 7s;
+    animation-delay: 7s;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     background-size: cover;
     background-position: 0 80%;
     width: 100%;
-    min-height: 500px;
+    min-height: 100vh;
     position: absolute;
     z-index: 0; }
   header .logo {
@@ -123,12 +121,20 @@ header {
   header h1 {
     position: relative;
     z-index: 5;
-    margin-top: 15vh;
+    margin-top: 5vh;
     font-size: 3.4em;
     text-transform: uppercase;
     color: white;
     font-weight: 600;
     letter-spacing: 0.05em; }
+  header p {
+    border-top: #ffb200 solid 2px;
+    margin-top: 20px;
+    padding-top: 20px;
+    position: relative;
+    z-index: 5;
+    color: white;
+    font-size: 2em; }
 
 .popout-outer {
   position: fixed;
@@ -199,21 +205,21 @@ header {
     opacity: 1; }
 
   100% {
-    opacity: 0.4; } }
+    opacity: 0.6; } }
 
 @-moz-keyframes overlay-tint-animation {
   0% {
     opacity: 1; }
 
   100% {
-    opacity: 0.4; } }
+    opacity: 0.6; } }
 
 @keyframes overlay-tint-animation {
   0% {
     opacity: 1; }
 
   100% {
-    opacity: 0.4; } }
+    opacity: 0.6; } }
 
 @-webkit-keyframes overlay-gray-animation {
   0% {
@@ -292,32 +298,71 @@ header {
     -o-transform: translate3d(40vw, 0, 0);
     transform: translate3d(40vw, 0, 0); } }
 
-section.splash .left-col {
-  width: 70%;
-  float: left; }
-  section.splash .left-col .intro {
-    padding-top: 60px;
-    opacity: 1; }
-    section.splash .left-col .intro h1 {
-      font-size: 2.4em;
+section.splash {
+  min-height: 400px; }
+  section.splash .bottom, section.splash .top {
+    float: left;
+    clear: both; }
+  section.splash .top .intro h2 {
+    padding-bottom: 0; }
+  section.splash .bottom .intro h2 {
+    padding-top: 0; }
+  section.splash .middle {
+    display: inline-block;
+    width: 100%;
+    background: white;
+    text-align: left; }
+    section.splash .middle h1 {
+      font-size: 3em;
+      color: #ffb200;
+      padding: 20px;
+      padding-left: 0; }
+  section.splash .intro {
+    width: 60%;
+    padding-top: 40px;
+    opacity: 1;
+    text-align: left; }
+    section.splash .intro h1 {
       text-transform: uppercase;
-      font-size: 3em; }
-    section.splash .left-col .intro h2 {
-      font-size: 1.8em;
-      line-height: 1.2em;
-      font-weight: 300;
-      color: #999;
-      padding-bottom: 20px;
-      border-bottom: #ffb200 1px solid; }
-  section.splash .left-col h3 {
+      font-size: 2em; }
+    section.splash .intro h2 {
+      color: white;
+      font-size: 1.6em;
+      line-height: 1.2em; }
+    section.splash .intro p {
+      font-size: 2.2em;
+      color: #888;
+      font-weight: 300; }
+  section.splash h3 {
     color: white;
     line-height: 1.2em;
     font-weight: 300; }
-  section.splash .left-col .work-intro {
+  section.splash .work-intro {
     margin-bottom: 300px; }
-    section.splash .left-col .work-intro img {
+    section.splash .work-intro img {
       width: 24.5%;
       display: inline-block; }
+  section.splash .eq {
+    float: right;
+    position: relative;
+    z-index: 100;
+    overflow: hidden;
+    height: 64px;
+    margin-top: -128px; }
+    section.splash .eq .eq-block {
+      width: 1px;
+      height: 16px;
+      background: #ffb200;
+      margin-right: 4px;
+      display: inline-block;
+      min-height: 1px; }
+
+section.work {
+  min-height: 200px;
+  padding: 60px 0; }
+  section.work h1 {
+    font-size: 2em;
+    font-weight: 800; }
 
 .overlay {
   width: 100%;
@@ -555,3 +600,374 @@ section.splash .left-col {
     -ms-transform: rotate(0);
     -o-transform: rotate(0);
     transform: rotate(0); } }
+
+@-webkit-keyframes piston-flywheel {
+  0% {
+    -webkit-transform: rotate(0deg); }
+
+  100% {
+    -webkit-transform: rotate(359deg); } }
+
+@-moz-keyframes piston-flywheel {
+  0% {
+    -moz-transform: rotate(0deg); }
+
+  100% {
+    -moz-transform: rotate(359deg); } }
+
+@keyframes piston-flywheel {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  100% {
+    -webkit-transform: rotate(359deg);
+    -moz-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+
+@-webkit-keyframes piston-ball {
+  0% {
+    -webkit-transform: rotate(90deg); }
+
+  100% {
+    -webkit-transform: rotate(450deg); } }
+
+@-moz-keyframes piston-ball {
+  0% {
+    -moz-transform: rotate(90deg); }
+
+  100% {
+    -moz-transform: rotate(450deg); } }
+
+@keyframes piston-ball {
+  0% {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg); }
+
+  100% {
+    -webkit-transform: rotate(450deg);
+    -moz-transform: rotate(450deg);
+    -ms-transform: rotate(450deg);
+    -o-transform: rotate(450deg);
+    transform: rotate(450deg); } }
+
+@-webkit-keyframes piston-crankshaft {
+  0% {
+    -webkit-transform: translate3d(20px, 10px, 0) rotate(0deg); }
+
+  25% {
+    -webkit-transform: translate3d(0px, 10px, 0) rotate(-9deg); }
+
+  50% {
+    -webkit-transform: translate3d(-20px, 10px, 0) rotate(0deg); }
+
+  75% {
+    -webkit-transform: translate3d(0px, 10px, 0) rotate(9deg); }
+
+  100% {
+    -webkit-transform: translate3d(20px, 10px, 0) rotate(0deg); } }
+
+@-moz-keyframes piston-crankshaft {
+  0% {
+    -moz-transform: translate3d(20px, 10px, 0) rotate(0deg); }
+
+  25% {
+    -moz-transform: translate3d(0px, 10px, 0) rotate(-9deg); }
+
+  50% {
+    -moz-transform: translate3d(-20px, 10px, 0) rotate(0deg); }
+
+  75% {
+    -moz-transform: translate3d(0px, 10px, 0) rotate(9deg); }
+
+  100% {
+    -moz-transform: translate3d(20px, 10px, 0) rotate(0deg); } }
+
+@keyframes piston-crankshaft {
+  0% {
+    -webkit-transform: translate3d(20px, 10px, 0) rotate(0deg);
+    -moz-transform: translate3d(20px, 10px, 0) rotate(0deg);
+    -ms-transform: translate3d(20px, 10px, 0) rotate(0deg);
+    -o-transform: translate3d(20px, 10px, 0) rotate(0deg);
+    transform: translate3d(20px, 10px, 0) rotate(0deg); }
+
+  25% {
+    -webkit-transform: translate3d(0px, 10px, 0) rotate(-9deg);
+    -moz-transform: translate3d(0px, 10px, 0) rotate(-9deg);
+    -ms-transform: translate3d(0px, 10px, 0) rotate(-9deg);
+    -o-transform: translate3d(0px, 10px, 0) rotate(-9deg);
+    transform: translate3d(0px, 10px, 0) rotate(-9deg); }
+
+  50% {
+    -webkit-transform: translate3d(-20px, 10px, 0) rotate(0deg);
+    -moz-transform: translate3d(-20px, 10px, 0) rotate(0deg);
+    -ms-transform: translate3d(-20px, 10px, 0) rotate(0deg);
+    -o-transform: translate3d(-20px, 10px, 0) rotate(0deg);
+    transform: translate3d(-20px, 10px, 0) rotate(0deg); }
+
+  75% {
+    -webkit-transform: translate3d(0px, 10px, 0) rotate(9deg);
+    -moz-transform: translate3d(0px, 10px, 0) rotate(9deg);
+    -ms-transform: translate3d(0px, 10px, 0) rotate(9deg);
+    -o-transform: translate3d(0px, 10px, 0) rotate(9deg);
+    transform: translate3d(0px, 10px, 0) rotate(9deg); }
+
+  100% {
+    -webkit-transform: translate3d(20px, 10px, 0) rotate(0deg);
+    -moz-transform: translate3d(20px, 10px, 0) rotate(0deg);
+    -ms-transform: translate3d(20px, 10px, 0) rotate(0deg);
+    -o-transform: translate3d(20px, 10px, 0) rotate(0deg);
+    transform: translate3d(20px, 10px, 0) rotate(0deg); } }
+
+@-webkit-keyframes piston-valve {
+  0% {
+    -webkit-transform: translate3d(15px, 0, 0); }
+
+  50% {
+    -webkit-transform: translate3d(-15px, 0, 0); }
+
+  100% {
+    -webkit-transform: translate3d(15px, 0, 0); } }
+
+@-moz-keyframes piston-valve {
+  0% {
+    -moz-transform: translate3d(15px, 0, 0); }
+
+  50% {
+    -moz-transform: translate3d(-15px, 0, 0); }
+
+  100% {
+    -moz-transform: translate3d(15px, 0, 0); } }
+
+@keyframes piston-valve {
+  0% {
+    -webkit-transform: translate3d(15px, 0, 0);
+    -moz-transform: translate3d(15px, 0, 0);
+    -ms-transform: translate3d(15px, 0, 0);
+    -o-transform: translate3d(15px, 0, 0);
+    transform: translate3d(15px, 0, 0); }
+
+  50% {
+    -webkit-transform: translate3d(-15px, 0, 0);
+    -moz-transform: translate3d(-15px, 0, 0);
+    -ms-transform: translate3d(-15px, 0, 0);
+    -o-transform: translate3d(-15px, 0, 0);
+    transform: translate3d(-15px, 0, 0); }
+
+  100% {
+    -webkit-transform: translate3d(15px, 0, 0);
+    -moz-transform: translate3d(15px, 0, 0);
+    -ms-transform: translate3d(15px, 0, 0);
+    -o-transform: translate3d(15px, 0, 0);
+    transform: translate3d(15px, 0, 0); } }
+
+@-webkit-keyframes piston-needle {
+  0% {
+    -webkit-transform: rotate(-45deg); }
+
+  90% {
+    -webkit-transform: rotate(45deg); }
+
+  100% {
+    -webkit-transform: rotate(-45deg); } }
+
+@-moz-keyframes piston-needle {
+  0% {
+    -moz-transform: rotate(-45deg); }
+
+  90% {
+    -moz-transform: rotate(45deg); }
+
+  100% {
+    -moz-transform: rotate(-45deg); } }
+
+@keyframes piston-needle {
+  0% {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+
+  90% {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
+
+  100% {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg); } }
+
+.piston {
+  margin-top: 40px;
+  position: relative;
+  float: left;
+  width: 40%;
+  z-index: 30; }
+  .piston svg {
+    width: 100%; }
+  .piston .piston-tube {
+    background: #444;
+    clear: both;
+    width: 100%;
+    height: 70px;
+    border-right: #000 solid 30px; }
+    .piston .piston-tube input {
+      font-family: 'Roboto';
+      background: none;
+      border: 0;
+      width: 100%;
+      text-align: center;
+      color: white;
+      outline: 0;
+      vertical-align: middle;
+      line-height: 65px;
+      font-size: 2em; }
+    .piston .piston-tube p {
+      color: white;
+      margin: 0;
+      margin-top: 10px;
+      padding: 0;
+      border: 0;
+      float: left;
+      font-size: 0.9em; }
+  .piston .piston-flywheel {
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    -ms-transform-origin: center;
+    -o-transform-origin: center;
+    transform-origin: center;
+    -webkit-animation: piston-flywheel 1s infinite;
+    -moz-animation: piston-flywheel 1s infinite;
+    animation: piston-flywheel 1s infinite;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-delay: 5s;
+    -moz-animation-delay: 5s;
+    animation-delay: 5s; }
+  .piston .piston-ball {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform-origin: center 50px;
+    -moz-transform-origin: center 50px;
+    -ms-transform-origin: center 50px;
+    -o-transform-origin: center 50px;
+    transform-origin: center 50px;
+    -webkit-animation: piston-ball 1s infinite;
+    -moz-animation: piston-ball 1s infinite;
+    animation: piston-ball 1s infinite;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-delay: 5s;
+    -moz-animation-delay: 5s;
+    animation-delay: 5s; }
+  .piston .piston-crankshaft {
+    -webkit-transform: translate3d(20px, 10px, 0) rotate(0deg);
+    -moz-transform: translate3d(20px, 10px, 0) rotate(0deg);
+    -ms-transform: translate3d(20px, 10px, 0) rotate(0deg);
+    -o-transform: translate3d(20px, 10px, 0) rotate(0deg);
+    transform: translate3d(20px, 10px, 0) rotate(0deg);
+    -webkit-transform-origin: right;
+    -moz-transform-origin: right;
+    -ms-transform-origin: right;
+    -o-transform-origin: right;
+    transform-origin: right;
+    -webkit-animation: piston-crankshaft 1s infinite;
+    -moz-animation: piston-crankshaft 1s infinite;
+    animation: piston-crankshaft 1s infinite;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-delay: 5s;
+    -moz-animation-delay: 5s;
+    animation-delay: 5s; }
+  .piston .piston-valve {
+    -webkit-transform: translate3d(15px, 0, 0);
+    -moz-transform: translate3d(15px, 0, 0);
+    -ms-transform: translate3d(15px, 0, 0);
+    -o-transform: translate3d(15px, 0, 0);
+    transform: translate3d(15px, 0, 0);
+    -webkit-transform-origin: right;
+    -moz-transform-origin: right;
+    -ms-transform-origin: right;
+    -o-transform-origin: right;
+    transform-origin: right;
+    -webkit-animation: piston-valve 1s infinite;
+    -moz-animation: piston-valve 1s infinite;
+    animation: piston-valve 1s infinite;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-delay: 5s;
+    -moz-animation-delay: 5s;
+    animation-delay: 5s; }
+  .piston .piston-needle {
+    -webkit-transform-origin: bottom;
+    -moz-transform-origin: bottom;
+    -ms-transform-origin: bottom;
+    -o-transform-origin: bottom;
+    transform-origin: bottom;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  .piston.slow .piston-flywheel, .piston.slow .piston-valve, .piston.slow .piston-ball, .piston.slow .piston-crankshaft {
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    animation-duration: 2s; }
+  .piston.fast .piston-flywheel, .piston.fast .piston-valve, .piston.fast .piston-ball, .piston.fast .piston-crankshaft {
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    animation-duration: 0.5s; }
+
+.piston-right {
+  width: 60%;
+  float: right;
+  margin-top: 32vh; }
+  .piston-right .letter {
+    position: absolute;
+    right: 100%;
+    color: white;
+    font-size: 1.4em; }
+  .piston-right .box {
+    background: 0;
+    border: #eee solid 1px;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 30; }
